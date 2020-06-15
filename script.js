@@ -71,11 +71,10 @@ let loadPhoto = (photoNumber) => {
   $('.left-a').click(() => {
     currentPhoto--;
     loadPhoto(currentPhoto);
-  })
+  });
 
 imagesData.forEach((item) => {
   $('#thumb').append(`<img class='thumbnails' src="${item.photo}">`);
- 
 });
 
    

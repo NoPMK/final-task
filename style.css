@@ -102,7 +102,7 @@ body {
     position: fixed;
     top: 630px;
     left: 500px;
-    border: black 2px solid;
+    justify-content: space-evenly;
 }
 
 .thumbnails {

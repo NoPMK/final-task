@@ -76,8 +76,8 @@ let loadPhoto = (photoNumber) => {
   })
 
 imagesData.forEach((item) => {
-  $('#thumb').append("<img class='thumbnails' src=''>");
-  $('.thumbnails').attr(imagesData.photo);
+  $('#thumb').append("<img class='thumbnails' src='../Images/img8.jpg'>");
+ 
 });
 
    

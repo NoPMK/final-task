@@ -4,8 +4,6 @@ let bigimg = {
     description: 'Huge whale jumps out of the water near reefs as lonely girl watches'
   };
 
-
-
 let img2 = {
       photo: "../Images/img2.jpg",
       title: "Rebirth",
@@ -76,7 +74,7 @@ let loadPhoto = (photoNumber) => {
   })
 
 imagesData.forEach((item) => {
-  $('#thumb').append("<img class='thumbnails' src='../Images/img8.jpg'>");
+  $('#thumb').append("<img class='thumbnails' src='item.photo'>");
  
 });
 

@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 let bigimg = {
     photo: "../Images/img1.jpg",
     title: 'Moby Dick',
@@ -59,22 +61,27 @@ let loadPhoto = (photoNumber) => {
     $('#first').attr('src', imagesData[photoNumber].photo);
     document.getElementById('title').innerHTML = imagesData[currentPhoto].title;
     document.getElementById('desc').innerHTML = imagesData[currentPhoto].description; 
-  }
-  
+   
+};
   loadPhoto(currentPhoto);
   
   $('.right-a').click(() => {
     currentPhoto++;
     loadPhoto(currentPhoto);
-  })
+  });
 
   $('.left-a').click(() => {
     currentPhoto--;
     loadPhoto(currentPhoto);
   });
 
-imagesData.forEach((item) => {
-  $('#thumb').append(`<img class='thumbnails' src="${item.photo}">`);
+imagesData.forEach((item, index) => {
+  $('#thumb').append(`<img class='thumbnails' data-number="${index}" src="${item.photo}">`);   
+  $('.thumbnails').click((event) => {
+    let thumbClicked = $(event.target).attr("data-number");
+    let numberIndex = parseInt(thumbClicked);
+    console.log(thumbClicked);
+   $('.big').html($(this).html());
+  });
 });
-
-   
+});

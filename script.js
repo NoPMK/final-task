@@ -76,12 +76,26 @@ let loadPhoto = (photoNumber) => {
   });
 
 imagesData.forEach((item, index) => {
-  $('#thumb').append(`<img class='thumbnails' data-number="${index}" src="${item.photo}">`);   
+  $('#thumb').append(`<a href="${item.photo}">
+  <img class='thumbnails active' data-number="${index}" src="${item.photo}">
+  </a>`);   
   $('.thumbnails').click((event) => {
     let thumbClicked = $(event.target).attr("data-number");
     let numberIndex = parseInt(thumbClicked);
-    console.log(thumbClicked);
-   $('.big').html($(this).html());
-  });
+    console.log(numberIndex);
+  
+   });
+
+   let thumbs = document.getElementById("thumb");
+   let pics = thumbs.getElementsByClassName("thumbnails");
+   for (let i = 0; i < pics.length; i++) {
+     pics[i].addEventListener("click" , function() {
+      let current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active " , "");
+      this.className +="active";
+      event.preventDefault();
+     });
+};
+
 });
 });

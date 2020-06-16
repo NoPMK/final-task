@@ -111,9 +111,13 @@ body {
 }
 
 .thumbnails {
-    max-width: 100px;
-    max-height: 100px;
+    width: 100px;
+    height: 100px;
     margin: 5px;
     border: solid black 3px;
     box-shadow: 0px 0px 20px 2px;
 }
+
+.thumbnails:hover {
+  border-color: white;  
+};
